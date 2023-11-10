@@ -1,4 +1,17 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Larches are awesome, the best way to see them, at least within reasonable driving distance of calgary, is on foot (or better on bike). Thats no secret. Literally. When larches start to turn in the fall, hundreds of thousands of people flock to well know "Larch Hikes, making them slightly less fun. 
+
+## Story
+- Create a web-map showing all known hiking trails into Larchy areas in and around Banff National Park, not just ones on Vice City's "top 10 Larch hikes to do this Autumn".
+- Get Hiking trails with OpenStreetMap's API.
+- Get Larches!...
+  - This is tricky, because Larches live amongst other conifers that apparently have simular signatures throughout the summer. Sure they change their color throughout the year, but the timing depends on latitude , elevation, species, and the year. Plus timing of color change also coincides with winter, where snow cover or weather could obscure their signatures. 
+  - First attempt will be a multi-temporal, multiband land cover classification of Sentinel 2 Images using random forest model in ESA Snap!, Gao et al. (2015) seemed to be successful with this approach, although these were plantations of larches so I can assume more homogeneous stands.
+  - How do I get training data? No success finding classified Larches, although I seem to remember I found an old canadian LC with Larches once. If I can't find it again I will use Vice City's "top 10 Larch hikes to do this Autumnn" with Google maps, and Sentinel 2 imagery to identify Larches   myself.
+- Using Vector Tile servers, return all larches, and all trails that intersect or are close to larches.
+- If classification is successful, us it to identify timing of color change and include that as data. So a user could see when to go on such a hike if they want to see some yellow-ass needles. 
+
+## Citations 
+Gao, Tian & Jiao-jun, Zhu & Zheng, Xiao & Shang, Guiduo & Huang, Liyan & Wu, Shangrong. (2015). Mapping Spatial Distribution of Larch Plantations from Multi-Seasonal Landsat-8 OLI Imagery and Multi-Scale Textures Using Random Forests. Remote Sensing. 7. 1702-1720. 10.3390/rs70201702. 
 
 ## Getting Started
 
@@ -8,29 +21,7 @@ First, run the development server:
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
-
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
